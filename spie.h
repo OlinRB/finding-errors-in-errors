@@ -6,7 +6,7 @@
 
 class SPIE_Game {
 private:
-    vector winning_numbers;
+    std::vector<int> winning_numbers; // added int declaration to vector #7 // added std:: to vector #8 compiler
     const int MAX_NUMBERS = 12;
 public:
     /*
@@ -33,7 +33,7 @@ public:
      * Modifies: outs and ins
      * Effects: Prints the options to outs and gets user input. Checks for validity.
      */
-    static char get_player_choice(ostream &outs, istream &ins);
+    static char get_player_choice(std::ostream &outs, std::istream &ins); //added std to both parameters #9 #10 compiler
 
     /*
      * Matches winning number
@@ -65,7 +65,7 @@ public:
      * Modifies: outs
      * Effects: Prints the winning numbers to outs
      */
-    void print_winning_numbers(ostream &outs) const;
+    void print_winning_numbers(std::ostream &outs) const; // added std to parameter #11
 
     /*
      * Roll dice

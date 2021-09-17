@@ -2,22 +2,25 @@
 using namespace std;
 
 int main() {
-    SPIE_Game game();
+    SPIE_Game game; //removed () #2 compiler
     game.print_rules(cout);
-    game.print_winning_numbers;
+    game.print_winning_numbers(cout); // added cout argument #3 compiler
 
     int score = 5;
     char choice = 'p';
 
-    while (choice != 'e') {
+    while (choice != 'e') { // added brackets around switch #4 compiler
         choice = game.get_player_choice(cout, cin);
 
-        switch(choice)
-            case 's': game.scramble(cout);
+        switch (choice) {
+            case 's':
+                game.scramble(cout);
                 break;
-            case 'i': game.print_rules(cout);
+            case 'i':
+                game.print_rules(cout);
                 break;
-            case 'p': cout << "Your score is " << score << endl;
+            case 'p':
+                cout << "Your score is " << score << endl;
                 game.print_winning_numbers(cout);
                 int dice_roll = game.roll_dice();
                 cout << "Your dice roll is: " << dice_roll << endl;
@@ -37,14 +40,16 @@ int main() {
                     }
                 }
                 cout << "Your new score is " << score << endl;
+
         }
     }
 
     if (score == 0) {
         cout << "You lost the game!" << endl;
+    } // added ending bracket to if statement #6 compiler
     else {
         cout << "Play again soon!" << endl;
     }
 
-    return 0
-}
+} // added ending bracket to main #5 compiler
+
